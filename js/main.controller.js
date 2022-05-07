@@ -90,8 +90,8 @@ function handleSubmit(ev) {
             }
             const name = el.name
             const value = el.value
-
-            user[name] = value
+            if(name && value) user[name] = value
+           
         }
     })
     if (!isError) {

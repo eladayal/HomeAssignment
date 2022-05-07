@@ -4,6 +4,7 @@ import { swalService } from "./swal.service.js"
 
 
 const STORAGE_KEY = 'userDB'
+const gUsers =[]
 
 export const userService = {
     onSignup
@@ -12,7 +13,8 @@ export const userService = {
 
 function onSignup(newUser) {
     newUser.id = utilService.makeId()
-    storageService.saveToStorage(STORAGE_KEY, newUser)
+    gUsers.push(newUser)
+    storageService.saveToStorage(STORAGE_KEY, gUsers)
     swalService.onSaveSwal()
 
 }
