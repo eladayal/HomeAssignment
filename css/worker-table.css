@@ -1,0 +1,44 @@
+/* WORKER TABLE */
+.workers-table-container {
+  text-align: center;
+}
+
+.row > * {
+  align-self: center;
+}
+
+.worker-name {
+  font-size: 20px;
+  font-weight: 600;
+  width: 100px;
+}
+.worker-img {
+  font-size: 18px;
+  height: 105px;
+  width: 125px;
+  border-radius: 50%;
+}
+.worker-img.header {
+  height: 25px;
+}
+
+.worker-img img {
+  border-radius: 50%;
+  background-color: #1d1d1da2;
+  width: 100px;
+  height: auto;
+}
+.worker-age {
+  font-size: 18px;
+  width: 100px;
+}
+.worker-startdate {
+  font-size: 18px;
+  width: 100px;
+}
+
+.row-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-block-end: 25px;
+}

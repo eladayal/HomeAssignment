@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/6cef1f6453.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Elad Ayal</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onload="app.onInit()">
+    <div class="main-screen" onclick="app.toggleMenu()"></div>
+
+    <header class="main-header flex-row-center">
+      <div class="header-container main-layout flex space-between align-center">
+        <h1 class="logo">Hellow World</h1>
+        <nav class="main-nav">
+          <ul class="clean-list flex gap-5">
+            <li>
+              <a onclick="app.navTo('table')" class="table-nav active" href="#"
+                >Employee's table</a
+              >
+            </li>
+            <li>
+              <a onclick="app.navTo('form')" class="form-nav non" href="#"
+                >Sign-up</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn-menu" onclick="app.toggleMenu()">
+          <img class="btn-menu-img" src="./img/menu.png" alt="" />
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- WORKERS TABLE -->
+      <section
+        class="workers-table-container main-layout flex-column-center display-block"
+      >
+        <div class="row row-header flex">
+          <div class="worker-img header">Picture</div>
+          <div class="worker-name">Full Name</div>
+          <div class="worker-age">Age</div>
+          <div class="worker-startdate">Start Date</div>
+        </div>
+        <div class="workers-table flex flex-direction-column"></div>
+      </section>
+      <!-- WORKERS TABLE END-->
+
+      <!-- SIGNUP FORM -->
+      <section class="form-page flex display-none">
+        <div class="form-container flex-column-center main-layout">
+          <h1>Sign up!</h1>
+          <p>All fields are mandatory</p>
+          <form
+            method=""
+            action=""
+            class="signup-form flex-column-center"
+            onsubmit="app.handleSubmit(event)"
+          >
+            <label
+              >*First name
+              <input
+                class="form-firstname input-style"
+                name="firstname"
+                type="text"
+              />
+              <span class="firstname error-msg display-none"
+                >This field is required</span
+              >
+            </label>
+            <label
+              >*Last name
+              <input
+                class="form-lastname input-style"
+                name="lastname"
+                type="text"
+              />
+              <span class="lastname error-msg display-none"
+                >This field is required</span
+              >
+            </label>
+
+            <label
+              >*Email
+              <input
+                class="form-email input-style"
+                name="email"
+                type="email"
+                placeholder="example@mail.com"
+              />
+              <span class="email error-msg display-none"
+                >This field is required</span
+              >
+            </label>
+
+            <label
+              >*Gender
+              <select class="form-gender" name="gender">
+                <option value="" disabled selected="selected">
+                  Select a gender
+                </option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="annonymus">Rather not say</option>
+              </select>
+              <span class="gender error-msg display-none"
+                >This field is required</span
+              >
+            </label>
+
+            <textarea
+              class="form-desc input-style"
+              name="desc"
+              placeholder="Describe yourself in a few words..."
+              rows="5"
+              cols="33"
+            ></textarea>
+            <span class="desc error-msg display-none"></span>
+
+            <button name="form-btn" class="btn-style2">Sign up</button>
+          </form>
+        </div>
+
+        <div class="svgs-container flex space-between">
+          <div className="left-svg">
+            <img class="left-img" src="img/login-svg-left.svg" alt="" />
+          </div>
+
+          <div className="right-svg">
+            <img class="right-img" src="img/login-svg-right.svg" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- SIGNUP FORM END-->
+    </main>
+
+    <script type="module" src="js/main.controller.js"></script>
+    <script src="lib/swal.js"></script>
+  </body>
+</html>
